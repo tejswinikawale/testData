@@ -1,0 +1,8 @@
+<apex:page controller="CustomListController" >
+    <apex:pageBlock >
+        <apex:pageBlockTable var="o" value="{!Opportunities}">
+            <apex:column value="{!o.Name}" />
+            <apex:column value="{!o.CloseDate}" />
+        </apex:pageBlockTable>
+    </apex:pageBlock>
+</apex:page>

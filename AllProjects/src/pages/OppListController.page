@@ -1,0 +1,27 @@
+<apex:page standardController="Opportunity" recordSetVar="opportunities" tabStyle="Opportunity" sidebar="false">
+    <apex:form >
+    <apex:pageBlock >
+        <apex:pageMessages />
+        <apex:pageblock >
+        <apex:panelGrid >
+        <apex:selectList value="{!filterId}" size="1">
+            <apex:actionSupport event="onchange" reRender="opp_table" />
+            <apex:selectOptions value="{!listviewoptions}"/>
+        </apex:selectList>
+        </apex:panelGrid>
+    </apex:pageblock>
+       <apex:pageBlockButtons >
+           <apex:commandButton value="save" action="{!save}"/>
+       </apex:pageBlockButtons>
+       <apex:pageBlockTable columns="1" var="opp" value="{!opportunities}" id="opp_table">
+           <apex:column value="{!opp.name}"/>
+		   <apex:column headerValue="Stage">
+			<apex:inputField value="{!opp.stageName}"/>
+			</apex:column>
+           <apex:column headerValue="Close Date">
+            <apex:inputField value="{!opp.closeDate}"/>
+           </apex:column>
+       </apex:pageBlockTable>
+    </apex:pageBlock>
+    </apex:form>
+</apex:page>

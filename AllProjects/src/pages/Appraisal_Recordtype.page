@@ -1,0 +1,13 @@
+<apex:page standardController="Appraisal__c">
+    <apex:form >
+        <apex:pageBlock >
+            <apex:pageBlockSection columns="2">
+            <apex:outputLabel >Enter Name :</apex:outputLabel>
+            <apex:inputField id="ipName" value="{!Appraisal__c.Name}" label="Select Apprailsal Name"/>
+            <apex:outputLabel >Select Appraisal Summary Type : </apex:outputLabel>
+            <apex:inputField id="ddlASType" value="{!Appraisal__c.Appraisal_Summary_Type__c}" />
+                 <apex:commandButton action="{!Save}" value="Save" />
+            </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

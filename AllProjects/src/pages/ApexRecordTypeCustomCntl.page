@@ -1,0 +1,14 @@
+<apex:page controller="AppraisalCustomCont">
+    <apex:form id="myForm">
+        <apex:pageBlock >
+            <apex:outputLabel >Enter Name :</apex:outputLabel>
+            <apex:inputText id="ipName" value="{!SelectedName}" />
+            <apex:outputLabel >Select Appraisal Summary Type : </apex:outputLabel>
+        &nbsp; &nbsp;
+            <apex:selectList id="ddlASType" value="{!SelectedAppraisalType}" size="1">
+            <apex:selectOptions value="{!AppraisalTypeList}" />
+        </apex:selectList>
+        <apex:commandButton value="Save" />
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

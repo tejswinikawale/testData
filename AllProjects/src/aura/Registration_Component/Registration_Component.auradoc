@@ -1,0 +1,10 @@
+<aura:documentation>
+	<aura:description>This text is with description tag</aura:description>
+	<aura:example name="WelcomeToLightning" ref="c:Welcome_To_Lightning1" label="My first lightning component">
+		Example Description
+	</aura:example>
+    
+    <aura:example name="registrationform" ref="c:Registration_Component" label="Registration form">
+		Example Description
+	</aura:example>
+</aura:documentation>

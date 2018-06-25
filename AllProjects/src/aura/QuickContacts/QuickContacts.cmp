@@ -1,0 +1,6 @@
+<aura:component implements="force:appHostable" controller = "ContactListController1">
+    <aura:attribute name = "parentAttribute" type = "Contact[]"/>
+    <aura:handler name="cmpEvent" event="c:SearchKeyChange" action = "{!c.handleComponentEvent}"/>
+    <c:SearchBar/>
+    <c:ContactList contacts = "{!v.parentAttribute}" />
+</aura:component>

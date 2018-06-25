@@ -1,0 +1,42 @@
+<apex:page standardController="Case" extensions="ActionRegionExt">
+    <apex:form >
+        <apex:messages id="msgs"/>
+        <apex:pageBlock mode="mainDetail" title="Create Case">
+        <apex:pageBlockButtons >
+            <apex:commandButton value="Save" action="{!save}" />
+            <apex:commandButton value="Cancel" action="{!cancel}" />
+        </apex:pageBlockButtons>
+     <apex:actionRegion >
+         <apex:pageBlockSection title="Subject" id="subject">
+             <apex:pageBlockSectionItem >
+                 <apex:outputLabel value="Base Subject "/>
+                 <apex:inputText value="{!baseSubject}">
+                     <apex:actionSupport event="onchange" action="{!setUpSubject}" status="stat" />
+                 </apex:inputText>
+             </apex:pageBlockSectionItem>
+           <apex:outputField value="{!Case.subject}"/>
+         </apex:pageBlockSection>
+     </apex:actionRegion>
+     <apex:actionRegion >
+         <apex:pageBlockSection title="Account">
+             <apex:inputField value="{!Case.accountid}"> 
+                 <apex:actionSupport event="onchange" action="{!setUpSubject}" rerender="subject,msgs" status="stat"/>
+                 <apex:actionStatus startText="getting Detail" id="stat"/>
+             </apex:inputField> 
+         </apex:pageBlockSection>
+     </apex:actionRegion>
+            
+            <apex:pageBlockSection title="Details" columns="1">
+        <apex:inputField style="width:80%" value="{!Case.Description}" />
+      </apex:pageBlockSection>
+      
+      <apex:pageBlockSection >
+        <apex:inputField value="{!Case.Type}" />
+        <apex:inputField value="{!Case.Priority}" />
+        <apex:inputField value="{!Case.Status}" />
+        <apex:inputField value="{!Case.Origin}" />
+        <apex:inputField value="{!Case.Reason}" />
+      </apex:pageBlockSection>
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>

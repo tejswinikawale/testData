@@ -1,0 +1,6 @@
+<apex:page controller="ActionFunctionController" >
+    <apex:form >
+        <apex:pageBlock title="Cases">
+        </apex:pageBlock>
+    </apex:form>
+</apex:page>
